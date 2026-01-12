@@ -36,7 +36,7 @@ export default function Header() {
         </div>
         <div className="flex items-center gap-4">
           {/* Language Switcher */}
-          <LanguageSwitcher />
+          <LanguageSwitcher isScrolled={isScrolled} />
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex gap-6 text-sm font-medium text-slate-600">

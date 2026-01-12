@@ -65,8 +65,8 @@
     "invoice": "Invoice & contract available upon request."
   },
   "languages": {
-    "bulgarian": "Български",
-    "english": "English",
-    "greek": "Ελληνικά"
+    "en": "English",
+    "bg": "Български",
+    "el": "Ελληνικά"
   }
 }
