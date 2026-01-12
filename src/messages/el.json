@@ -1,0 +1,72 @@
+{
+  "nav": {
+    "gallery": "Γκαλερί",
+    "amenities": "Ανέσεις",
+    "location": "Τοποθεσία",
+    "contact": "Επικοινωνία με ιδιοκτήτη"
+  },
+  "hero": {
+    "location": "Τοποθεσία",
+    "title": "Όνομα Βίλας",
+    "tagline": "Σλόγκαν εδώ",
+    "viewGallery": "Δείτε τη Γκαλερί",
+    "checkAvailability": "Ελέγξτε Διαθεσιμότητα"
+  },
+  "highlights": {
+    "nearBeach": "Κοντά στην Παραλία",
+    "wifi": "Δωρεάν WiFi",
+    "parking": "Παρκάρισμα"
+  },
+  "gallery": {
+    "title": "Γκαλερί",
+    "clickToExpand": "Κάντε κλικ για μεγέθυνση"
+  },
+  "about": {
+    "title": "Σχετικά με τη Βίλα",
+    "whyLoveIt": "Γιατί θα σας αρέσει εδώ:",
+    "guests": "Επισκέπτες",
+    "bedrooms": "Υπνοδωμάτια",
+    "experienceLuxury": "Ζήστε την πολυτέλεια",
+    "homeAwayFromHome": "Το Σπίτι σας Μακριά από το Σπίτι"
+  },
+  "amenities": {
+    "title": "Ανέσεις",
+    "subtitle": "Όλα όσα χρειάζεστε για μια άνετη διαμονή"
+  },
+  "testimonials": {
+    "title": "Κριτικές Επισκεπτών"
+  },
+  "faq": {
+    "title": "Συχνές Ερωτήσεις"
+  },
+  "location": {
+    "title": "Τοποθεσία",
+    "address": "Νέα Πέραμος, Καβάλα",
+    "exactLocationAfterBooking": "Η ακριβής τοποθεσία αποστέλλεται μετά την κράτηση"
+  },
+  "contact": {
+    "title": "Έτοιμοι για τις ελληνικές σας διακοπές;",
+    "subtitle": "Κλείστε απευθείας μαζί μας για να λάβετε τις καλύτερες τιμές και εξατομικευμένη εξυπηρέτηση. Συνήθως απαντάμε εντός μιας ώρας.",
+    "owner": "Ιδιοκτήτες Ακινήτου",
+    "whatsapp": "WhatsApp",
+    "viber": "Viber",
+    "call": "Κλήση",
+    "email": "Email",
+    "spokenLanguages": "Ομιλούμενες γλώσσες: Αγγλικά, Ελληνικά, Βουλγαρικά"
+  },
+  "floatingButtons": {
+    "whatsapp": "WhatsApp",
+    "viber": "Viber",
+    "telegram": "Telegram",
+    "call": "Καλέστε μας"
+  },
+  "footer": {
+    "rights": "Όλα τα δικαιώματα διατηρούνται.",
+    "invoice": "Τιμολόγιο και σύμβαση διαθέσιμα κατόπιν αιτήματος."
+  },
+  "languages": {
+    "bulgarian": "Български",
+    "english": "English",
+    "greek": "Ελληνικά"
+  }
+}

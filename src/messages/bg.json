@@ -1,0 +1,72 @@
+{
+  "nav": {
+    "gallery": "Галерия",
+    "amenities": "Удобства",
+    "location": "Местоположение",
+    "contact": "Контакт с собственика"
+  },
+  "hero": {
+    "location": "Местоположение",
+    "title": "Име на вилата",
+    "tagline": "Слоган тук",
+    "viewGallery": "Виж галерията",
+    "checkAvailability": "Провери наличността"
+  },
+  "highlights": {
+    "nearBeach": "Близо до плажа",
+    "wifi": "Безплатен WiFi",
+    "parking": "Паркинг"
+  },
+  "gallery": {
+    "title": "Галерия",
+    "clickToExpand": "Кликни за увеличаване"
+  },
+  "about": {
+    "title": "За вилата",
+    "whyLoveIt": "Защо ще ви хареса тук:",
+    "guests": "Гости",
+    "bedrooms": "Спални",
+    "experienceLuxury": "Изживейте лукса",
+    "homeAwayFromHome": "Вашият дом далеч от дома"
+  },
+  "amenities": {
+    "title": "Удобства",
+    "subtitle": "Всичко необходимо за комфортен престой"
+  },
+  "testimonials": {
+    "title": "Отзиви от гости"
+  },
+  "faq": {
+    "title": "Често задавани въпроси"
+  },
+  "location": {
+    "title": "Местоположение",
+    "address": "Неа Перамос, Кавала",
+    "exactLocationAfterBooking": "Точното местоположение се изпраща след резервация"
+  },
+  "contact": {
+    "title": "Готови ли сте за вашата гръцка почивка?",
+    "subtitle": "Резервирайте директно при нас за да получите най-добрите цени и персонално обслужване. Обикновено отговаряме в рамките на час.",
+    "owner": "Собственици на имота",
+    "whatsapp": "WhatsApp",
+    "viber": "Viber",
+    "call": "Обади се",
+    "email": "Имейл",
+    "spokenLanguages": "Говорими езици: английски, гръцки, български"
+  },
+  "floatingButtons": {
+    "whatsapp": "WhatsApp",
+    "viber": "Viber",
+    "telegram": "Telegram",
+    "call": "Обади се"
+  },
+  "footer": {
+    "rights": "Всички права запазени.",
+    "invoice": "Фактура и договор налични при поискване."
+  },
+  "languages": {
+    "bulgarian": "Български",
+    "english": "English",
+    "greek": "Ελληνικά"
+  }
+}

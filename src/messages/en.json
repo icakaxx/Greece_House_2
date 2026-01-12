@@ -1,0 +1,72 @@
+{
+  "nav": {
+    "gallery": "Gallery",
+    "amenities": "Amenities",
+    "location": "Location",
+    "contact": "Contact Owner"
+  },
+  "hero": {
+    "location": "Location",
+    "title": "Villa Name",
+    "tagline": "Tagline goes here",
+    "viewGallery": "View Gallery",
+    "checkAvailability": "Check Availability"
+  },
+  "highlights": {
+    "nearBeach": "Near Beach",
+    "wifi": "Free WiFi",
+    "parking": "Parking"
+  },
+  "gallery": {
+    "title": "Gallery",
+    "clickToExpand": "Click to expand"
+  },
+  "about": {
+    "title": "About the Villa",
+    "whyLoveIt": "Why you'll love it here:",
+    "guests": "Guests",
+    "bedrooms": "Bedrooms",
+    "experienceLuxury": "Experience luxury",
+    "homeAwayFromHome": "Your Home Away From Home"
+  },
+  "amenities": {
+    "title": "Amenities",
+    "subtitle": "Everything you need for a comfortable stay"
+  },
+  "testimonials": {
+    "title": "Guest Reviews"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions"
+  },
+  "location": {
+    "title": "Location",
+    "address": "Nea Peramos, Kavala",
+    "exactLocationAfterBooking": "Exact location sent after booking"
+  },
+  "contact": {
+    "title": "Ready for your Greek getaway?",
+    "subtitle": "Book directly with us to get the best rates and personalized service. We usually respond within an hour.",
+    "owner": "Property Owners",
+    "whatsapp": "WhatsApp",
+    "viber": "Viber",
+    "call": "Call",
+    "email": "Email",
+    "spokenLanguages": "Spoken languages: English, Greek, Bulgarian"
+  },
+  "floatingButtons": {
+    "whatsapp": "WhatsApp",
+    "viber": "Viber",
+    "telegram": "Telegram",
+    "call": "Call Us"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "invoice": "Invoice & contract available upon request."
+  },
+  "languages": {
+    "bulgarian": "Български",
+    "english": "English",
+    "greek": "Ελληνικά"
+  }
+}

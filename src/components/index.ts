@@ -1,0 +1,13 @@
+export { default as Header } from './Header';
+export { default as Hero } from './Hero';
+export { default as Highlights } from './Highlights';
+export { default as Gallery } from './Gallery';
+export { default as About } from './About';
+export { default as Amenities } from './Amenities';
+export { default as Testimonials } from './Testimonials';
+export { default as FAQ } from './FAQ';
+export { default as Map } from './Map';
+export { default as Contact } from './Contact';
+export { default as FloatingContactButtons } from './FloatingContactButtons';
+export { default as Footer } from './Footer';
+export { default as LanguageSwitcher } from './LanguageSwitcher';

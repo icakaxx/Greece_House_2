@@ -1,0 +1,901 @@
+Ето ти **готов English prompt** (за Cursor / ChatGPT / dev), за **SSP (single static page / static site)** в **Next.js**, mobile-first, с hero, gallery, details (near beach), house name, и карта най-долу + floating contact buttons вдясно.
+
+---
+
+## ✅ PROMPT (ENGLISH)
+
+Build a **mobile-first, high-converting SSP (single static page / static site)** website for a **Greek guest house / vacation rental**, targeting locations: **Ofrynio, Kavala, Nea Peramos, and any other Greece locations**.
+
+### Tech stack & constraints
+
+* **Next.js (App Router)** + **TypeScript**
+* **SSP / Static output** (no database). Content should come from a local file like `src/content/property.ts` (or JSON).
+* Styling: **Tailwind CSS**
+* Use `next/image` everywhere (optimized images, responsive sizes).
+* The site must score high on performance and mobile UX.
+
+### Goal
+
+A simple, elegant landing page that helps owners get **direct inquiries** via quick contact buttons (WhatsApp/Viber/Telegram/Facebook/Instagram/Phone), with minimal friction.
+
+---
+
+## Page structure (single page `/`)
+
+### 1) Header (sticky, minimal)
+
+* Logo / house name
+* 1 CTA button: “Contact” (scrolls to contact area)
+* Language switch optional (EN/GR/BG-ready structure)
+
+### 2) Hero section (top)
+
+Must include:
+
+* **House name** (e.g., “Villa Ammolofi Retreat”)
+* Short tagline (e.g., “Steps from the sea • Family-friendly • Quiet neighborhood”)
+* 2 CTAs:
+
+  * **View Gallery** (scrolls to gallery)
+  * **Contact Owner** (opens a modal or scrolls to contact)
+* Key chips (icons): “Near beach”, “Parking”, “Wi-Fi”, “Air conditioning”, etc.
+* Hero background image (beautiful exterior / seaside vibe)
+
+### 3) Quick highlights block (below hero)
+
+* Distance to beach (e.g., “3 min walk to the beach”)
+* Capacity (e.g., “Sleeps 6”)
+* Bedrooms/Bathrooms
+* Check-in/out times (optional)
+* A mini “Why you’ll love it” list (3–5 bullets)
+
+### 4) Gallery section
+
+* Mobile-first gallery (swipeable carousel on mobile, grid on desktop)
+* Lightbox on click (tap to zoom)
+* Optimize: lazy-loading, blurred placeholder
+
+### 5) About / Location description
+
+* Text: where it is (Ofrynio / Kavala / Nea Peramos etc.)
+* Clearly state: **is it close to the beach**, what type of beach, nearby amenities (supermarket, tavernas)
+* Add “Nearby attractions” (3–6 items)
+
+### 6) Amenities section
+
+* Use icon cards
+* Group amenities by category (Comfort, Kitchen, Outdoor, Family)
+
+### 7) Contact section + floating buttons
+
+**Floating buttons fixed on the right side** (mobile and desktop):
+
+* WhatsApp
+* Viber
+* Telegram
+* Facebook
+* Instagram
+* Phone call
+
+Rules:
+
+* Buttons should be stacked vertically on the right.
+* On mobile, they should be compact and not cover important content (allow collapse/expand).
+* Each button uses the correct deep link format:
+
+  * WhatsApp: `https://wa.me/<number>`
+  * Viber: `viber://chat?number=<number>` (and include a fallback link)
+  * Telegram: `https://t.me/<username>`
+  * Phone: `tel:<number>`
+  * Facebook/Instagram: profile URL
+
+Also include a normal contact block with:
+
+* Owner name
+* Phone
+* Optional email
+* “Copy” buttons for phone/email
+
+### 8) Map section (bottom)
+
+* A map embed (Google Maps iframe is fine for SSP)
+* Show approximate pin / exact address (configurable)
+* Add a small disclaimer if needed: “Location shown is approximate” (optional)
+
+### 9) Footer
+
+* Simple: house name, location, social links
+* “Invoice & contract available” note (if the site is used by an agency)
+
+---
+
+## Content model (local file)
+
+Create `src/content/property.ts`:
+
+* houseName
+* tagline
+* locations (array)
+* nearBeachText + beachDistanceMeters
+* galleryImages (array of URLs)
+* amenities (array)
+* contacts (whatsapp, viber, telegram, fb, ig, phone)
+* mapEmbedUrl
+* nearbyAttractions (array)
+* SEO fields: title, description, ogImage
+
+---
+
+## SEO requirements
+
+* Proper metadata (title/description/OpenGraph)
+* JSON-LD schema for a lodging / vacation rental (basic)
+* Clean headings (H1 once, H2 sections)
+* Optimized images, fast LCP
+
+---
+
+## UI/UX requirements
+
+* Mobile-first layout
+* Clear spacing, premium look
+* Smooth scroll between sections
+* Gallery opens fast and feels “app-like”
+* Floating contact buttons always visible but non-intrusive (collapsible)
+
+---
+
+## Extra features (nice-to-have, include if fast)
+
+* “Check availability” button (simple: opens a WhatsApp template message like:
+  “Hi, is your place available from DD/MM to DD/MM for X guests?”)
+* Testimonials section (3 short reviews)
+* FAQ accordion (parking, pets, noise rules, check-in)
+* “Share” button (copy page link / native share on mobile)
+* PWA-ready basics (optional)
+
+---
+
+## Deliverables
+
+* Full Next.js project structure
+* Components:
+
+  * `Hero`
+  * `Gallery`
+  * `Amenities`
+  * `Attractions`
+  * `FloatingContactButtons`
+  * `MapEmbed`
+* Uses `property.ts` as the single source of truth
+* Clean, production-ready code
+
+---
+
+## 🖼️ Example image sources (use these as placeholders)
+
+(Use as hero + gallery placeholders. Prefer Unsplash images.)
+
+```txt
+Unsplash collections / searches:
+- Beach house photos: https://unsplash.com/s/photos/beach-house
+- Greek house photos: https://unsplash.com/s/photos/greek-house
+- Greece beach photos: https://unsplash.com/s/photos/greece-beach
+- Kavala photos: https://unsplash.com/s/photos/kavala
+
+Specific photo pages (good for a Greece / Kavala vibe):
+- Kavala balcony/sea house (photo page): https://unsplash.com/photos/a-stone-building-with-a-balcony-overlooking-the-ocean-JHgREU-tdtA
+- Kavala aerial city/sea (photo page): https://unsplash.com/photos/a-large-body-of-water-surrounded-by-a-city-53oNMGCRBMg
+- Kavala coastal city (photo page): https://unsplash.com/photos/a-city-with-a-body-of-water-in-the-background-3JDMrQdrQt0
+- Greece house by sea (photo page): https://unsplash.com/photos/aerial-photo-of-house-beside-sea-qeM8Cap_Nbk
+- Greece traditional white houses (photo page): https://unsplash.com/photos/white-and-brown-houses-yqU3nIYt_oE
+```
+
+Sources used for the placeholder image links above: ([Unsplash][1])
+
+---
+
+Ако искаш, мога да ти направя и **втора версия на промпта**, която е “template-style” за много къщи (multi-property), пак статично, но със страници `/properties/[slug]`.
+
+[1]: https://unsplash.com/s/photos/beach-house?utm_source=chatgpt.com "100+ Beach House Pictures | Download Free Images on ..."
+
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villa Ammolofi Retreat | Nea Peramos, Greece</title>
+    <meta name="description" content="Luxury vacation rental in Nea Peramos, steps from the beach. Family-friendly, quiet neighborhood, modern amenities.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Hide scrollbar for horizontal scrolling areas */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        /* Gallery Lightbox Transition */
+        .lightbox {
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- DATA SOURCE (Simulating src/content/property.ts) -->
+    <script>
+        const propertyData = {
+            houseName: "Villa Ammolofi Retreat",
+            tagline: "Steps from the sea • Family-friendly • Quiet neighborhood",
+            location: "Nea Peramos, Kavala, Greece",
+            description: "Nestled in the serene landscape of Nea Peramos, Villa Ammolofi Retreat offers the perfect escape for families and couples. Just a 3-minute walk from the crystal-clear waters of Ammolofoi Beach, our villa combines modern luxury with traditional Greek hospitality. Enjoy your morning coffee on the spacious balcony overlooking the Aegean Sea, or host a BBQ in our lush garden.",
+            beachDistance: "3 min walk to the beach",
+            capacity: "Sleeps 6",
+            specs: "3 Bedrooms • 2 Bathrooms",
+            priceInfo: "From €120 / night",
+            coordinates: { lat: 40.833, lng: 24.305 }, // Approx location for Nea Peramos
+            
+            heroImage: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=1932&auto=format&fit=crop", // Greek/White stone vibe
+            
+            galleryImages: [
+                "https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=1932&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=2070&auto=format&fit=crop", // Beach house interior
+                "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=2070&auto=format&fit=crop", // Resort pool/patio vibe
+                "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?q=80&w=2070&auto=format&fit=crop", // Bedroom
+                "https://images.unsplash.com/photo-1584622050111-993a426fbf0a?q=80&w=2070&auto=format&fit=crop", // Kitchen
+                "https://images.unsplash.com/photo-1615529182904-14819c35db37?q=80&w=2080&auto=format&fit=crop"  // Living room
+            ],
+
+            highlights: [
+                { icon: "fa-umbrella-beach", text: "3 min walk to beach" },
+                { icon: "fa-users", text: "Sleeps up to 6" },
+                { icon: "fa-bed", text: "3 Bedrooms" },
+                { icon: "fa-bath", text: "2 Bathrooms" },
+                { icon: "fa-wifi", text: "Fast Wi-Fi" },
+                { icon: "fa-parking", text: "Free Parking" }
+            ],
+
+            amenities: {
+                Comfort: ["Air Conditioning", "Heating", "Washer", "Iron"],
+                Kitchen: ["Fully Equipped Kitchen", "Espresso Machine", "Dishwasher", "Microwave"],
+                Outdoor: ["Private Garden", "BBQ Grill", "Balcony with Sea View", "Outdoor Shower"],
+                Entertainment: ["Smart TV (Netflix)", "Board Games", "High-speed WiFi"]
+            },
+
+            attractions: [
+                "Ammolofoi Beach Bars (5 min drive)",
+                "Ancient Castle of Peramos (10 min walk)",
+                "Kavala City Center (20 min drive)",
+                "Local Supermarket (2 min walk)",
+                "Taverna 'To Kima' (5 min walk)"
+            ],
+
+            contacts: {
+                phone: "+306900000000", // Example format
+                whatsapp: "306900000000",
+                viber: "306900000000",
+                telegram: "villaammolofi",
+                email: "stay@villaammolofi.gr",
+                instagram: "https://instagram.com",
+                facebook: "https://facebook.com",
+                ownerName: "Maria & Nikos"
+            },
+
+            testimonials: [
+                { name: "Sarah J.", text: "Absolutely stunning villa! The location is perfect, quiet but close to the best beaches.", rating: 5 },
+                { name: "Dimitris K.", text: "Great host, very clean house. We had a wonderful family vacation.", rating: 5 },
+                { name: "Elena P.", text: "The view from the balcony is breathtaking. Highly recommended!", rating: 5 }
+            ],
+
+            faqs: [
+                { q: "Is there parking available?", a: "Yes, we have free private parking for up to 2 cars." },
+                { q: "Are pets allowed?", a: "Small pets are allowed upon request. Please contact us beforehand." },
+                { q: "What is the check-in/check-out time?", a: "Check-in is after 3:00 PM and check-out is before 11:00 AM." },
+                { q: "Is the kitchen fully equipped?", a: "Yes, it has everything you need to cook family meals, including an espresso machine." }
+            ]
+        };
+    </script>
+
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/20 shadow-sm transition-all duration-300" id="main-header">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-house-chimney text-blue-600 text-xl"></i>
+                <span class="font-serif font-bold text-xl text-slate-800 tracking-tight" id="header-title">Villa Name</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
+                    <a href="#gallery" class="hover:text-blue-600 transition-colors">Gallery</a>
+                    <a href="#amenities" class="hover:text-blue-600 transition-colors">Amenities</a>
+                    <a href="#location" class="hover:text-blue-600 transition-colors">Location</a>
+                </nav>
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-5 py-2 rounded-full transition-colors shadow-lg shadow-blue-600/20">
+                    Contact Owner
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img id="hero-bg" src="" alt="Hero Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-slate-900/10"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto text-white mt-16">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-xs font-semibold tracking-wider uppercase mb-4 animate-fade-in-up">
+                <i class="fa-solid fa-location-dot"></i> <span id="hero-location">Location</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-serif font-bold mb-4 leading-tight shadow-sm" id="hero-title">
+                Villa Name
+            </h1>
+            <p class="text-lg md:text-xl text-slate-200 mb-8 max-w-2xl mx-auto font-light" id="hero-tagline">
+                Tagline goes here
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#gallery" class="w-full sm:w-auto px-8 py-3.5 bg-white text-slate-900 font-medium rounded-full hover:bg-slate-100 transition-all shadow-lg">
+                    View Gallery
+                </a>
+                <button onclick="openWhatsAppAvailability()" class="w-full sm:w-auto px-8 py-3.5 bg-blue-600 text-white font-medium rounded-full hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Check Availability
+                </button>
+            </div>
+
+            <!-- Hero Key Chips -->
+            <div class="mt-12 flex flex-wrap justify-center gap-3 md:gap-6 text-sm font-medium text-slate-200">
+                <span class="flex items-center gap-2 bg-black/20 px-4 py-2 rounded-full backdrop-blur-sm border border-white/10">
+                    <i class="fa-solid fa-umbrella-beach text-blue-300"></i> Near Beach
+                </span>
+                <span class="flex items-center gap-2 bg-black/20 px-4 py-2 rounded-full backdrop-blur-sm border border-white/10">
+                    <i class="fa-solid fa-wifi text-blue-300"></i> Free WiFi
+                </span>
+                <span class="flex items-center gap-2 bg-black/20 px-4 py-2 rounded-full backdrop-blur-sm border border-white/10">
+                    <i class="fa-solid fa-parking text-blue-300"></i> Parking
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIGHLIGHTS BAR -->
+    <div class="bg-white py-8 border-b border-slate-100 shadow-sm relative z-20 -mt-2 rounded-t-3xl sm:rounded-none">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 justify-items-center" id="highlights-container">
+                <!-- Highlights injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20">
+
+        <!-- INTRO & DESCRIPTION -->
+        <section id="about" class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl font-serif font-bold text-slate-900 mb-6 relative inline-block">
+                    About the Villa
+                    <span class="absolute bottom-0 left-0 w-1/2 h-1 bg-blue-500 rounded-full"></span>
+                </h2>
+                <p class="text-slate-600 leading-relaxed mb-6 text-lg" id="property-description">
+                    <!-- Desc populated by JS -->
+                </p>
+                
+                <h3 class="text-lg font-bold text-slate-900 mb-4">Why you'll love it here:</h3>
+                <ul class="space-y-3 mb-8" id="why-love-list">
+                    <!-- Populated by JS attractions/reasons -->
+                </ul>
+
+                <div class="flex gap-4">
+                    <div class="text-center p-4 bg-blue-50 rounded-xl border border-blue-100 min-w-[100px]">
+                        <div class="text-2xl font-bold text-blue-600 mb-1" id="stat-guests">6</div>
+                        <div class="text-xs text-blue-800 font-medium uppercase tracking-wide">Guests</div>
+                    </div>
+                    <div class="text-center p-4 bg-blue-50 rounded-xl border border-blue-100 min-w-[100px]">
+                        <div class="text-2xl font-bold text-blue-600 mb-1" id="stat-bedrooms">3</div>
+                        <div class="text-xs text-blue-800 font-medium uppercase tracking-wide">Bedrooms</div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl group">
+                <img id="about-image" src="" alt="Villa Interior" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div class="absolute bottom-6 left-6 text-white">
+                    <p class="text-sm font-medium opacity-90">Experience luxury</p>
+                    <p class="text-xl font-serif font-bold">Your Home Away From Home</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION -->
+        <section id="gallery" class="scroll-mt-24">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-3xl font-serif font-bold text-slate-900">Gallery</h2>
+                <span class="text-sm text-slate-500 hidden sm:inline-block">Click to expand</span>
+            </div>
+            
+            <!-- Mobile: Swipeable | Desktop: Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:auto-rows-[200px]" id="gallery-grid">
+                <!-- Images injected by JS -->
+            </div>
+        </section>
+
+        <!-- AMENITIES SECTION -->
+        <section id="amenities" class="scroll-mt-24 bg-slate-50 rounded-3xl p-6 md:p-10 border border-slate-200">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-serif font-bold text-slate-900 mb-3">Amenities</h2>
+                <p class="text-slate-500">Everything you need for a comfortable stay</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8" id="amenities-container">
+                <!-- Amenities injected by JS -->
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section id="testimonials" class="scroll-mt-24">
+            <h2 class="text-3xl font-serif font-bold text-center text-slate-900 mb-10">Guest Reviews</h2>
+            <div class="grid md:grid-cols-3 gap-6" id="testimonials-container">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
+        <!-- FAQ ACCORDION -->
+        <section id="faq" class="max-w-3xl mx-auto scroll-mt-24">
+             <h2 class="text-2xl font-serif font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
+             <div class="space-y-4" id="faq-container">
+                 <!-- Populated by JS -->
+             </div>
+        </section>
+
+        <!-- LOCATION / MAP -->
+        <section id="location" class="scroll-mt-24">
+            <h2 class="text-3xl font-serif font-bold text-slate-900 mb-6">Location</h2>
+            <div class="bg-white p-2 rounded-2xl shadow-lg border border-slate-100">
+                <div class="aspect-video w-full rounded-xl overflow-hidden bg-slate-200 relative">
+                     <!-- Simple Map Placeholder (Iframe) -->
+                     <iframe 
+                        id="gmap-iframe"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <!-- Fallback if no API key or load issue, though Iframe usually works -->
+                </div>
+            </div>
+            <div class="mt-4 flex items-center justify-between text-sm text-slate-500 px-2">
+                <span id="location-address">Nea Peramos, Kavala</span>
+                <span><i class="fa-solid fa-map-pin mr-1"></i> Exact location sent after booking</span>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- CONTACT SECTION (Footer Area) -->
+    <section id="contact" class="bg-slate-900 text-white py-16 md:py-24 relative overflow-hidden">
+        <!-- Decorative blobs -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold mb-6">Ready for your Greek getaway?</h2>
+            <p class="text-slate-300 text-lg mb-10 max-w-2xl mx-auto">
+                Book directly with us to get the best rates and personalized service. We usually respond within an hour.
+            </p>
+
+            <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/10 max-w-lg mx-auto mb-10">
+                <div class="flex items-center justify-center gap-4 mb-6">
+                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-xl font-bold">M</div>
+                    <div class="text-left">
+                        <div class="font-bold text-lg" id="owner-name">Maria & Nikos</div>
+                        <div class="text-slate-300 text-sm">Property Owners</div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-3 mb-6">
+                    <button onclick="openLink('whatsapp')" class="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white py-3 px-4 rounded-xl transition-transform hover:scale-105 font-medium">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> WhatsApp
+                    </button>
+                    <button onclick="openLink('viber')" class="flex items-center justify-center gap-2 bg-[#7360f2] hover:bg-[#6655d8] text-white py-3 px-4 rounded-xl transition-transform hover:scale-105 font-medium">
+                        <i class="fa-brands fa-viber text-xl"></i> Viber
+                    </button>
+                    <button onclick="openLink('tel')" class="flex items-center justify-center gap-2 bg-slate-700 hover:bg-slate-600 text-white py-3 px-4 rounded-xl transition-transform hover:scale-105 font-medium">
+                        <i class="fa-solid fa-phone text-xl"></i> Call
+                    </button>
+                    <button onclick="openLink('email')" class="flex items-center justify-center gap-2 bg-slate-700 hover:bg-slate-600 text-white py-3 px-4 rounded-xl transition-transform hover:scale-105 font-medium">
+                        <i class="fa-solid fa-envelope text-xl"></i> Email
+                    </button>
+                </div>
+                
+                <p class="text-xs text-slate-400">
+                    Spoken languages: English, Greek, Bulgarian
+                </p>
+            </div>
+            
+            <div class="flex justify-center gap-6">
+                <a href="#" id="social-fb" class="text-slate-400 hover:text-white transition-colors text-2xl"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" id="social-ig" class="text-slate-400 hover:text-white transition-colors text-2xl"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-600 py-8 border-t border-slate-900 text-center text-sm">
+        <p>&copy; <span id="year">2024</span> <span id="footer-name">Villa Name</span>. All rights reserved.</p>
+        <p class="mt-2 text-xs">Invoice & contract available upon request.</p>
+    </footer>
+
+    <!-- FLOATING ACTION BUTTONS (Right Side) -->
+    <div class="fixed right-4 bottom-24 z-40 flex flex-col items-end gap-3 pointer-events-none">
+        
+        <!-- Toggle Button (Mobile) -->
+        <button id="fab-toggle" class="pointer-events-auto md:hidden w-12 h-12 rounded-full bg-blue-600 text-white shadow-lg flex items-center justify-center text-xl transition-transform hover:scale-110 active:scale-95 focus:outline-none">
+            <i class="fa-solid fa-message"></i>
+        </button>
+
+        <!-- Buttons Container -->
+        <div id="fab-menu" class="flex-col items-end gap-3 pointer-events-auto transition-all duration-300 origin-bottom-right transform scale-0 opacity-0 md:scale-100 md:opacity-100 md:flex flex">
+            
+            <a href="#" onclick="openLink('whatsapp'); return false;" class="flex items-center gap-2 group">
+                <span class="bg-white text-slate-800 text-xs font-bold py-1 px-2 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap hidden md:block">WhatsApp</span>
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-[#25D366] rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform">
+                    <i class="fa-brands fa-whatsapp md:text-xl"></i>
+                </div>
+            </a>
+            
+            <a href="#" onclick="openLink('viber'); return false;" class="flex items-center gap-2 group">
+                <span class="bg-white text-slate-800 text-xs font-bold py-1 px-2 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap hidden md:block">Viber</span>
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-[#7360f2] rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform">
+                    <i class="fa-brands fa-viber md:text-xl"></i>
+                </div>
+            </a>
+
+            <a href="#" onclick="openLink('telegram'); return false;" class="flex items-center gap-2 group">
+                <span class="bg-white text-slate-800 text-xs font-bold py-1 px-2 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap hidden md:block">Telegram</span>
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-[#0088cc] rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform">
+                    <i class="fa-brands fa-telegram md:text-xl"></i>
+                </div>
+            </a>
+
+            <a href="#" onclick="openLink('tel'); return false;" class="flex items-center gap-2 group">
+                <span class="bg-white text-slate-800 text-xs font-bold py-1 px-2 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap hidden md:block">Call Us</span>
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-phone md:text-xl"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="fixed inset-0 z-[60] bg-black/95 hidden items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <button id="lightbox-close" class="absolute top-6 right-6 text-white/70 hover:text-white text-4xl focus:outline-none">&times;</button>
+        <button id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-3xl md:text-5xl p-2 focus:outline-none"><i class="fa-solid fa-chevron-left"></i></button>
+        <button id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-3xl md:text-5xl p-2 focus:outline-none"><i class="fa-solid fa-chevron-right"></i></button>
+        
+        <img id="lightbox-img" src="" alt="Full screen" class="max-h-[85vh] max-w-[90vw] object-contain rounded-sm shadow-2xl">
+        <p id="lightbox-caption" class="absolute bottom-6 text-center text-white/80 text-sm font-light tracking-wide"></p>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // --- 1. RENDER CONTENT ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Basic Text
+            document.title = `${propertyData.houseName} | ${propertyData.location}`;
+            document.getElementById('header-title').textContent = propertyData.houseName;
+            document.getElementById('footer-name').textContent = propertyData.houseName;
+            document.getElementById('year').textContent = new Date().getFullYear();
+            
+            document.getElementById('hero-title').textContent = propertyData.houseName;
+            document.getElementById('hero-tagline').textContent = propertyData.tagline;
+            document.getElementById('hero-location').textContent = propertyData.location;
+            document.getElementById('hero-bg').src = propertyData.heroImage;
+            
+            document.getElementById('property-description').textContent = propertyData.description;
+            document.getElementById('owner-name').textContent = propertyData.contacts.ownerName;
+            document.getElementById('location-address').textContent = propertyData.location;
+            document.getElementById('about-image').src = propertyData.galleryImages[1] || propertyData.heroImage; // Use 2nd image or hero
+            
+            // Map
+            // Using a generic search embed for the location if exact coords not needed for privacy
+            // Or constructing an embed URL from coords. Here is a generic place embed approach.
+            const mapQuery = encodeURIComponent(propertyData.location);
+            document.getElementById('gmap-iframe').src = `https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d12102.13245678!2d${propertyData.coordinates.lng}!3d${propertyData.coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s${mapQuery}!5e0!3m2!1sen!2sgr!4v1600000000000!5m2!1sen!2sgr`;
+
+            // Socials
+            document.getElementById('social-fb').href = propertyData.contacts.facebook;
+            document.getElementById('social-ig').href = propertyData.contacts.instagram;
+
+            // Highlights
+            const highlightsContainer = document.getElementById('highlights-container');
+            propertyData.highlights.forEach(h => {
+                const div = document.createElement('div');
+                div.className = "flex flex-col items-center gap-2 text-center group";
+                div.innerHTML = `
+                    <div class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-xl shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid ${h.icon}"></i>
+                    </div>
+                    <span class="text-xs font-semibold text-slate-600 uppercase tracking-wide">${h.text}</span>
+                `;
+                highlightsContainer.appendChild(div);
+            });
+
+            // Why You'll Love It
+            const whyList = document.getElementById('why-love-list');
+            propertyData.attractions.slice(0, 4).forEach(item => {
+                const li = document.createElement('li');
+                li.className = "flex items-start gap-3 text-slate-700";
+                li.innerHTML = `<i class="fa-solid fa-check text-green-500 mt-1"></i> <span>${item}</span>`;
+                whyList.appendChild(li);
+            });
+
+            // Gallery
+            const galleryGrid = document.getElementById('gallery-grid');
+            propertyData.galleryImages.forEach((src, index) => {
+                const div = document.createElement('div');
+                // First image spans 2 rows and 2 cols on desktop for a nice mosaic
+                if (index === 0) {
+                    div.className = "md:col-span-2 md:row-span-2 relative group cursor-pointer overflow-hidden rounded-xl h-64 md:h-auto shadow-md";
+                } else {
+                    div.className = "relative group cursor-pointer overflow-hidden rounded-xl h-64 md:h-full shadow-sm";
+                }
+                
+                div.innerHTML = `
+                    <img src="${src}" alt="Gallery image ${index + 1}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover:opacity-100 text-3xl transition-opacity duration-300 drop-shadow-lg"></i>
+                    </div>
+                `;
+                div.onclick = () => openLightbox(index);
+                galleryGrid.appendChild(div);
+            });
+
+            // Amenities
+            const amenitiesContainer = document.getElementById('amenities-container');
+            for (const [category, items] of Object.entries(propertyData.amenities)) {
+                const catDiv = document.createElement('div');
+                catDiv.innerHTML = `
+                    <h3 class="text-lg font-bold text-slate-800 mb-4 border-b border-slate-200 pb-2">${category}</h3>
+                    <ul class="space-y-2">
+                        ${items.map(item => `
+                            <li class="flex items-center gap-3 text-slate-600 text-sm">
+                                <i class="fa-solid fa-circle-check text-blue-400 text-xs"></i> ${item}
+                            </li>
+                        `).join('')}
+                    </ul>
+                `;
+                amenitiesContainer.appendChild(catDiv);
+            }
+
+            // Testimonials
+            const testimonialContainer = document.getElementById('testimonials-container');
+            propertyData.testimonials.forEach(t => {
+                const tDiv = document.createElement('div');
+                tDiv.className = "bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col";
+                tDiv.innerHTML = `
+                    <div class="text-yellow-400 text-sm mb-3">
+                        ${Array(t.rating).fill('<i class="fa-solid fa-star"></i>').join('')}
+                    </div>
+                    <p class="text-slate-600 italic mb-4 flex-grow">"${t.text}"</p>
+                    <div class="font-bold text-slate-900 text-sm border-t border-slate-100 pt-3">${t.name}</div>
+                `;
+                testimonialContainer.appendChild(tDiv);
+            });
+
+            // FAQs
+            const faqContainer = document.getElementById('faq-container');
+            propertyData.faqs.forEach((f, idx) => {
+                const details = document.createElement('details');
+                details.className = "group bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden";
+                details.innerHTML = `
+                    <summary class="flex items-center justify-between p-4 cursor-pointer font-medium text-slate-800 list-none group-open:bg-blue-50 transition-colors">
+                        <span>${f.q}</span>
+                        <span class="transition-transform group-open:rotate-180">
+                            <i class="fa-solid fa-chevron-down text-blue-500"></i>
+                        </span>
+                    </summary>
+                    <div class="p-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        ${f.a}
+                    </div>
+                `;
+                faqContainer.appendChild(details);
+            });
+
+            // --- JSON-LD SCHEMA INJECTION ---
+            const script = document.createElement('script');
+            script.type = 'application/ld+json';
+            script.text = JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "VacationRental",
+                "name": propertyData.houseName,
+                "description": propertyData.description,
+                "image": propertyData.galleryImages,
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Nea Peramos",
+                    "addressRegion": "Kavala",
+                    "addressCountry": "GR"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": propertyData.coordinates.lat,
+                    "longitude": propertyData.coordinates.lng
+                },
+                "url": window.location.href,
+                "telephone": propertyData.contacts.phone,
+                "priceRange": propertyData.priceInfo,
+                "amenityFeature": Object.values(propertyData.amenities).flat().map(amenity => ({
+                    "@type": "LocationFeatureSpecification",
+                    "name": amenity,
+                    "value": true
+                }))
+            });
+            document.head.appendChild(script);
+        });
+
+        // --- 2. INTERACTIVITY ---
+
+        // Helper: Link Builder
+        function openLink(type) {
+            const { whatsapp, viber, telegram, phone, email } = propertyData.contacts;
+            let url = "";
+            
+            switch(type) {
+                case 'whatsapp':
+                    url = `https://wa.me/${whatsapp}`;
+                    break;
+                case 'viber':
+                    // Try deep link first, usually managed by OS, but simple href works on mobile
+                    url = `viber://chat?number=${viber}`; 
+                    // Fallback handled by browser usually, or specific check needed (simplified here)
+                    break;
+                case 'telegram':
+                    url = `https://t.me/${telegram}`;
+                    break;
+                case 'tel':
+                    url = `tel:${phone}`;
+                    break;
+                case 'email':
+                    url = `mailto:${email}`;
+                    break;
+            }
+            if (url) window.open(url, '_blank');
+        }
+
+        function openWhatsAppAvailability() {
+            const { whatsapp } = propertyData.contacts;
+            const message = encodeURIComponent(`Hi, I am interested in ${propertyData.houseName}. Is it available for dates...`);
+            window.open(`https://wa.me/${whatsapp}?text=${message}`, '_blank');
+        }
+
+        // FAB Toggle (Mobile)
+        const fabToggle = document.getElementById('fab-toggle');
+        const fabMenu = document.getElementById('fab-menu');
+        let isFabOpen = false;
+
+        fabToggle.addEventListener('click', () => {
+            isFabOpen = !isFabOpen;
+            if (isFabOpen) {
+                fabMenu.classList.remove('scale-0', 'opacity-0');
+                fabMenu.classList.add('scale-100', 'opacity-100', 'flex');
+                fabToggle.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                fabToggle.classList.add('bg-slate-700');
+                fabToggle.classList.remove('bg-blue-600');
+            } else {
+                fabMenu.classList.add('scale-0', 'opacity-0');
+                fabMenu.classList.remove('scale-100', 'opacity-100');
+                fabToggle.innerHTML = '<i class="fa-solid fa-message"></i>';
+                fabToggle.classList.remove('bg-slate-700');
+                fabToggle.classList.add('bg-blue-600');
+            }
+        });
+
+        // Sticky Header Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md', 'bg-white/95');
+                header.classList.remove('glass');
+            } else {
+                header.classList.remove('shadow-md', 'bg-white/95');
+                header.classList.add('glass');
+            }
+        });
+
+        // Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const lightboxPrev = document.getElementById('lightbox-prev');
+        const lightboxNext = document.getElementById('lightbox-next');
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            lightbox.classList.remove('hidden');
+            // Small timeout to allow display:flex to apply before opacity transition
+            setTimeout(() => {
+                lightbox.classList.remove('opacity-0');
+            }, 10);
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeLightbox() {
+            lightbox.classList.add('opacity-0');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+            }, 300);
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            lightboxImg.src = propertyData.galleryImages[currentImageIndex];
+        }
+
+        function nextImage(e) {
+            if(e) e.stopPropagation();
+            currentImageIndex = (currentImageIndex + 1) % propertyData.galleryImages.length;
+            updateLightboxImage();
+        }
+
+        function prevImage(e) {
+            if(e) e.stopPropagation();
+            currentImageIndex = (currentImageIndex - 1 + propertyData.galleryImages.length) % propertyData.galleryImages.length;
+            updateLightboxImage();
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxNext.addEventListener('click', nextImage);
+        lightboxPrev.addEventListener('click', prevImage);
+        
+        // Close on background click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        // Keyboard nav
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('hidden')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+        });
+
+    </script>
+</body>
+</html>
+
+
