@@ -1,5 +1,8 @@
-import type { Metadata } from "next";
-import { Inter, Playfair_Display } from 'next/font/google';
+import type {Metadata} from "next";
+import {notFound} from "next/navigation";
+import {Inter, Playfair_Display} from 'next/font/google';
+import {NextIntlClientProvider} from 'next-intl';
+import {getMessages} from 'next-intl/server';
 import "./globals.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
@@ -19,7 +22,7 @@ export const metadata: Metadata = {
   title: "Villa Ammolofi Retreat | Luxury Vacation Rental in Nea Peramos, Greece",
   description: "Luxury vacation rental in Nea Peramos, steps from the beach. Family-friendly, quiet neighborhood, modern amenities. Book directly with owners.",
   keywords: "vacation rental, Greece, Nea Peramos, Kavala, beach house, villa, holiday home",
-  authors: [{ name: "Villa Ammolofi Retreat" }],
+  authors: [{name: "Villa Ammolofi Retreat"}],
   openGraph: {
     title: "Villa Ammolofi Retreat | Luxury Vacation Rental in Nea Peramos, Greece",
     description: "Luxury vacation rental in Nea Peramos, steps from the beach. Family-friendly, quiet neighborhood, modern amenities.",
@@ -42,15 +45,28 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: {locale?: string};
 }>) {
+  const locale = params?.locale || 'en';
+
+  let messages;
+  try {
+    messages = await getMessages({locale});
+  } catch {
+    notFound();
+  }
+
   return (
-    <html className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
+    <html lang={locale} className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
       <body className="bg-slate-50 text-slate-800 antialiased">
-        {children}
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );
