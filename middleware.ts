@@ -1,30 +1,28 @@
 import createMiddleware from 'next-intl/middleware';
-import { NextRequest } from 'next/server';
+import {NextRequest, NextResponse} from 'next/server';
 
 const locales = ['en', 'bg', 'el'];
 const defaultLocale = 'en';
 
-export default async function middleware(request: NextRequest) {
-  // Create the middleware with our locales
-  const handleI18nRouting = createMiddleware({
-    locales,
-    defaultLocale,
-  });
+const handleI18nRouting = createMiddleware({
+  locales,
+  defaultLocale,
+});
 
-  const response = handleI18nRouting(request);
+export default function middleware(request: NextRequest) {
+  const {pathname} = request.nextUrl;
 
-  return response;
+  // Redirect bare "/" to the default locale to avoid 404 on Vercel
+  if (pathname === '/') {
+    return NextResponse.redirect(new URL(`/${defaultLocale}`, request.url));
+  }
+
+  return handleI18nRouting(request);
 }
 
 export const config = {
   matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - api (API routes)
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     */
+    // Match all paths except API, static assets, and favicon
     '/((?!api|_next/static|_next/image|favicon.ico).*)',
   ],
 };
