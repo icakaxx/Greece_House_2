@@ -1,16 +1,15 @@
 import { useTranslations } from 'next-intl';
-import { propertyData } from '@/content/property';
 
 export default function Highlights() {
-  const t = useTranslations('about');
+  const t = useTranslations('highlights');
 
   const highlights = [
-    { icon: "fa-umbrella-beach", text: propertyData.nearBeachText },
-    { icon: "fa-users", text: propertyData.capacity },
-    { icon: "fa-bed", text: `${t('bedrooms')} 3` },
-    { icon: "fa-bath", text: "2 Bathrooms" },
-    { icon: "fa-wifi", text: "Fast Wi-Fi" },
-    { icon: "fa-parking", text: "Free Parking" }
+    { icon: "fa-umbrella-beach", text: t('nearBeach') },
+    { icon: "fa-users", text: t('capacity') },
+    { icon: "fa-bed", text: t('bedrooms') },
+    { icon: "fa-bath", text: t('bathrooms') },
+    { icon: "fa-wifi", text: t('wifi') },
+    { icon: "fa-parking", text: t('parking') }
   ];
 
   return (

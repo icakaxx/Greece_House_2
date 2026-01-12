@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { propertyData } from '@/content/property';
 
 export default function FAQ() {
   const t = useTranslations('faq');
+  const faqList = t.raw('list') as Array<{ q: string; a: string }>;
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
@@ -16,7 +16,7 @@ export default function FAQ() {
     <section id="faq" className="max-w-3xl mx-auto scroll-mt-24">
       <h2 className="text-2xl font-serif font-bold text-slate-900 mb-6">{t('title')}</h2>
       <div className="space-y-4">
-        {propertyData.faqs.map((faq, index) => (
+        {faqList.map((faq, index) => (
           <div key={index} className="group bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
             <button
               onClick={() => toggleFAQ(index)}

@@ -6,16 +6,19 @@
     "contact": "Contact Owner"
   },
   "hero": {
-    "location": "Location",
-    "title": "Villa Name",
-    "tagline": "Tagline goes here",
+    "location": "Nea Peramos, Kavala, Greece",
+    "title": "Villa Ammolofi Retreat",
+    "tagline": "Steps from the sea • Family-friendly • Quiet neighborhood",
     "viewGallery": "View Gallery",
     "checkAvailability": "Check Availability"
   },
   "highlights": {
-    "nearBeach": "Near Beach",
-    "wifi": "Free WiFi",
-    "parking": "Parking"
+    "nearBeach": "3 min walk to the beach",
+    "wifi": "Fast Wi-Fi",
+    "parking": "Free Parking",
+    "capacity": "Sleeps 6",
+    "bedrooms": "3 Bedrooms",
+    "bathrooms": "2 Bathrooms"
   },
   "gallery": {
     "title": "Gallery",
@@ -23,21 +26,46 @@
   },
   "about": {
     "title": "About the Villa",
+    "description": "Nestled in the serene landscape of Nea Peramos, Villa Ammolofi Retreat offers the perfect escape for families and couples. Just a 3-minute walk from the crystal-clear waters of Ammolofoi Beach, our villa combines modern luxury with traditional Greek hospitality. Enjoy your morning coffee on the spacious balcony overlooking the Aegean Sea, or host a BBQ in our lush garden.",
     "whyLoveIt": "Why you'll love it here:",
     "guests": "Guests",
     "bedrooms": "Bedrooms",
     "experienceLuxury": "Experience luxury",
-    "homeAwayFromHome": "Your Home Away From Home"
+    "homeAwayFromHome": "Your Home Away From Home",
+    "attractions": [
+      "Ammolofoi Beach Bars (5 min drive)",
+      "Ancient Castle of Peramos (10 min walk)",
+      "Kavala City Center (20 min drive)",
+      "Local Supermarket (2 min walk)",
+      "Taverna 'To Kima' (5 min walk)"
+    ]
   },
   "amenities": {
     "title": "Amenities",
-    "subtitle": "Everything you need for a comfortable stay"
+    "subtitle": "Everything you need for a comfortable stay",
+    "list": {
+      "Comfort": ["Air Conditioning", "Heating", "Washer", "Iron"],
+      "Kitchen": ["Fully Equipped Kitchen", "Espresso Machine", "Dishwasher", "Microwave"],
+      "Outdoor": ["Private Garden", "BBQ Grill", "Balcony with Sea View", "Outdoor Shower"],
+      "Entertainment": ["Smart TV (Netflix)", "Board Games", "High-speed WiFi"]
+    }
   },
   "testimonials": {
-    "title": "Guest Reviews"
+    "title": "Guest Reviews",
+    "list": [
+      { "name": "Sarah J.", "text": "Absolutely stunning villa! The location is perfect, quiet but close to the best beaches." },
+      { "name": "Dimitris K.", "text": "Great host, very clean house. We had a wonderful family vacation." },
+      { "name": "Elena P.", "text": "The view from the balcony is breathtaking. Highly recommended!" }
+    ]
   },
   "faq": {
-    "title": "Frequently Asked Questions"
+    "title": "Frequently Asked Questions",
+    "list": [
+      { "q": "Is there parking available?", "a": "Yes, we have free private parking for up to 2 cars." },
+      { "q": "Are pets allowed?", "a": "Small pets are allowed upon request. Please contact us beforehand." },
+      { "q": "What is the check-in/check-out time?", "a": "Check-in is after 3:00 PM and check-out is before 11:00 AM." },
+      { "q": "Is the kitchen fully equipped?", "a": "Yes, it has everything you need to cook family meals, including an espresso machine." }
+    ]
   },
   "location": {
     "title": "Location",
@@ -63,6 +91,10 @@
   "footer": {
     "rights": "All rights reserved.",
     "invoice": "Invoice & contract available upon request."
+  },
+  "seo": {
+    "title": "Villa Ammolofi Retreat | Luxury Vacation Rental in Nea Peramos, Greece",
+    "description": "Luxury vacation rental in Nea Peramos, steps from the beach. Family-friendly, quiet neighborhood, modern amenities. Book directly with owners."
   },
   "languages": {
     "en": "English",

@@ -1,17 +1,18 @@
 import { useTranslations } from 'next-intl';
-import { propertyData } from '@/content/property';
 
 export default function Testimonials() {
   const t = useTranslations('testimonials');
+  const testimonials = t.raw('list') as Array<{ name: string; text: string }>;
 
   return (
     <section id="testimonials" className="scroll-mt-24">
       <h2 className="text-3xl font-serif font-bold text-center text-slate-900 mb-10">{t('title')}</h2>
       <div className="grid md:grid-cols-3 gap-6">
-        {propertyData.testimonials.map((testimonial, index) => (
+        {testimonials.map((testimonial, index) => (
           <div key={index} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col">
             <div className="text-yellow-400 text-sm mb-3">
-              {Array(testimonial.rating).fill(null).map((_, i) => (
+              {/* Assuming 5 star rating for all for now, or could pass from propertyData */}
+              {Array(5).fill(null).map((_, i) => (
                 <i key={i} className="fa-solid fa-star"></i>
               ))}
             </div>

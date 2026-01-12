@@ -1,3 +1,5 @@
+import { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 import { propertyData } from '@/content/property';
 import {
   Header,
@@ -14,12 +16,30 @@ import {
   Footer
 } from '@/components';
 
-export default function Home() {
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: 'seo' });
+
+  return {
+    title: t('title'),
+    description: t('description'),
+    openGraph: {
+      title: t('title'),
+      description: t('description'),
+      images: [propertyData.ogImage],
+      type: 'website',
+    },
+  };
+}
+
+export default async function Home({ params: { locale } }: { params: { locale: string } }) {
+  const t = await getTranslations({ locale, namespace: 'about' });
+  const tHero = await getTranslations({ locale, namespace: 'hero' });
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "VacationRental",
-    "name": propertyData.houseName,
-    "description": propertyData.description,
+    "name": tHero('title'),
+    "description": t('description'),
     "image": propertyData.galleryImages,
     "address": {
       "@type": "PostalAddress",

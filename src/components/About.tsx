@@ -4,6 +4,7 @@ import { propertyData } from '@/content/property';
 
 export default function About() {
   const t = useTranslations('about');
+  const attractions = t.raw('attractions') as string[];
 
   return (
     <section id="about" className="grid md:grid-cols-2 gap-12 items-center">
@@ -13,12 +14,12 @@ export default function About() {
           <span className="absolute bottom-0 left-0 w-1/2 h-1 bg-blue-500 rounded-full"></span>
         </h2>
         <p className="text-slate-600 leading-relaxed mb-6 text-lg">
-          {propertyData.description}
+          {t('description')}
         </p>
 
         <h3 className="text-lg font-bold text-slate-900 mb-4">{t('whyLoveIt')}</h3>
         <ul className="space-y-3 mb-8">
-          {propertyData.nearbyAttractions.slice(0, 4).map((item, index) => (
+          {attractions.map((item, index) => (
             <li key={index} className="flex items-start gap-3 text-slate-700">
               <i className="fa-solid fa-check text-green-500 mt-1"></i>
               <span>{item}</span>

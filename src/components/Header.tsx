@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
-import { propertyData } from '@/content/property';
 import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Header() {
   const t = useTranslations('nav');
+  const tHero = useTranslations('hero');
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export default function Header() {
         <div className="flex items-center gap-2">
           <i className="fa-solid fa-house-chimney text-blue-600 text-xl"></i>
           <span className="font-serif font-bold text-xl text-slate-800 tracking-tight">
-            {propertyData.houseName}
+            {tHero('title')}
           </span>
         </div>
         <div className="flex items-center gap-4">

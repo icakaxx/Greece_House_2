@@ -1,8 +1,5 @@
 import type {Metadata} from "next";
-import {notFound} from "next/navigation";
 import {Inter, Playfair_Display} from 'next/font/google';
-import {NextIntlClientProvider} from 'next-intl';
-import {getMessages} from 'next-intl/server';
 import "./globals.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
@@ -45,28 +42,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
-  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: {locale?: string};
 }>) {
-  const locale = params?.locale || 'en';
-
-  let messages;
-  try {
-    messages = await getMessages({locale});
-  } catch {
-    notFound();
-  }
-
   return (
-    <html lang={locale} className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
+    <html className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
       <body className="bg-slate-50 text-slate-800 antialiased">
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
-        </NextIntlClientProvider>
+        {children}
       </body>
     </html>
   );

@@ -1,8 +1,8 @@
 import { useTranslations } from 'next-intl';
-import { propertyData } from '@/content/property';
 
 export default function Amenities() {
   const t = useTranslations('amenities');
+  const amenitiesList = t.raw('list') as Record<string, string[]>;
 
   return (
     <section id="amenities" className="scroll-mt-24 bg-slate-50 rounded-3xl p-6 md:p-10 border border-slate-200">
@@ -12,7 +12,7 @@ export default function Amenities() {
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {Object.entries(propertyData.amenities).map(([category, items]) => (
+        {Object.entries(amenitiesList).map(([category, items]) => (
           <div key={category}>
             <h3 className="text-lg font-bold text-slate-800 mb-4 border-b border-slate-200 pb-2">{category}</h3>
             <ul className="space-y-2">

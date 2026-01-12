@@ -29,13 +29,13 @@ export default function Hero() {
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto text-white mt-16">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-xs font-semibold tracking-wider uppercase mb-4 animate-fade-in-up">
-          <i className="fa-solid fa-location-dot"></i> {propertyData.location}
+          <i className="fa-solid fa-location-dot"></i> {t('location')}
         </div>
         <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 leading-tight shadow-sm">
-          {propertyData.houseName}
+          {t('title')}
         </h1>
         <p className="text-lg md:text-xl text-slate-200 mb-8 max-w-2xl mx-auto font-light">
-          {propertyData.tagline}
+          {t('tagline')}
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
